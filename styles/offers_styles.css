@@ -1090,11 +1090,13 @@ section
 	outline: none;
 	cursor: pointer;
 	margin-top: 40px;
+	text-align: center;
 }
 .search_button:hover
 {
 	opacity: 0.8;
 }
+
 
 /*********************************
 8.1 Search Extras
@@ -1269,7 +1271,8 @@ section
 
 .offers_sorting
 {
-	display: inline-block;
+	
+	padding-top: 20px;
 }
 .offers_sorting > li
 {
@@ -1283,10 +1286,10 @@ section
 	text-transform: uppercase;
 	line-height: 50px;
 	cursor: pointer;
-	border: solid 2px #dadada;
+	border: solid 2px#4e0f6d;
 	padding-left: 25px;
-	padding-right: 14px;
-	margin-right: 16px;
+	padding-right: 25px;
+	margin-right: 10px;
 }
 .distance_item
 {

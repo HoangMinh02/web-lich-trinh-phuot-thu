@@ -163,10 +163,12 @@
 	.search_button
 	{
 		margin-top: 29px;
+		text-align: center;
 	}
 	.offers_sorting_container
 	{
-		margin-top: 105px;
+		margin-top: 50px;
+		text-align: center;
 	}
 }
 
