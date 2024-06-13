@@ -18,8 +18,11 @@
 
 <body>
     <?php
+    define('BASE_URL', 'http://localhost:8080/web_lich_trinh_phuot_thu/');
+
     require_once('Database.php');
-    $sql = 'SELECT * FROM diadiem WHERE pho_bien = 1';
+
+    $sql = 'SELECT * FROM lichtrinh ';
 
     $result = mysqli_query($connect, $sql);
 
@@ -33,6 +36,23 @@
 
     while ($row = mysqli_fetch_assoc($result)) {
         $datas[] = $row;
+    }
+
+
+    $sqlDiaDiem = 'SELECT * FROM diadiem WHERE pho_bien = "phoBien" ';
+
+    $resultDiaDiem = mysqli_query($connect, $sqlDiaDiem);
+
+    mysqli_fetch_assoc($resultDiaDiem);
+    mysqli_fetch_assoc($resultDiaDiem);
+    mysqli_fetch_assoc($resultDiaDiem);
+
+    mysqli_data_seek($resultDiaDiem, 0);
+
+    $datas2 = [];
+
+    while ($rowDiaDiem = mysqli_fetch_assoc($resultDiaDiem)) {
+        $datas2[] = $rowDiaDiem;
     }
     ?>
     <div class="super_container">
@@ -248,20 +268,21 @@
                 <div class="row intro_items">
                     <!-- Intro Item -->
                     <?php foreach ($datas as $data) : ?>
-                        <div class="col-lg-4 intro_col">
+                        <div class="col-lg-4 col-md-6 mb-4 intro_col">
                             <div class="intro_item">
                                 <div class="intro_item_overlay"></div>
                                 <!-- Image by https://unsplash.com/@dnevozhai -->
                                 <div class="intro_item_background" style="
-                                        background-image: url(https://scr.vn/wp-content/uploads/2020/07/H%C3%ACnh-%E1%BA%A3nh-V%E1%BB%8Bnh-H%E1%BA%A1-Long.jpg);
-                                    "></div>
+                                        background-image: url('<?= BASE_URL . 'images/' . $data['hinh_anh'] ?>');
+                                    ">
+                                </div>
                                 <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
                                     <div class="button intro_button">
                                         <div class="button_bcg"></div>
                                         <a href="#">Xem thêm<span></span><span></span><span></span></a>
                                     </div>
                                     <div class="intro_center text-center">
-                                        <h1><?= $data['ten_dia_diem'] ?></h1>
+                                        <h1><?= $data['ten_lich_trinh'] ?></h1>
                                         <div class="rating rating_4">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -290,14 +311,14 @@
                 </div>
                 <div class="row offers_items">
                     <!-- Offers Item -->
-                    <?php foreach ($datas as $data) : ?>
+                    <?php foreach ($datas2 as $data) : ?>
                         <div class="col-lg-6 offers_col">
                             <div class="offers_item">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="offers_image_container">
                                             <!-- Image by https://unsplash.com/@kensuarez -->
-                                            <div class="offers_image_background" style="background-image: url(https://phunugioi.com/wp-content/uploads/2020/10/anh-ha-noi.jpg)"></div>
+                                            <div class="offers_image_background" style="background-image: url('<?= BASE_URL . 'images/' . $data['hinh_anh'] ?>');"></div>
                                             <div class="offer_name"><a href="#"><?= $data['ten_dia_diem'] ?></a></div>
                                         </div>
                                     </div>
@@ -327,6 +348,10 @@
             </div>
         </div>
 
+
+
+
+
         <div class="video_area video_bg overlay">
             <div class="container">
                 <div class="row">
@@ -343,6 +368,64 @@
                 </div>
             </div>
         </div>
+
+        <div class="trending">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2 class="section_title">Bài viết</h2>
+                    </div>
+                </div>
+                <div class="row trending_container">
+
+                    <!-- Trending Item -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="trending_item clearfix">
+                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="trending_content">
+                                <div class="trending_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
+                                <div class="trending_price">Nov 29, 2017</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Trending Item -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="trending_item clearfix">
+                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="trending_content">
+                                <div class="trending_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
+                                <div class="trending_price">Nov 29, 2017</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trending Item -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="trending_item clearfix">
+                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="trending_content">
+                                <div class="trending_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
+                                <div class="trending_price">Nov 29, 2017</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trending Item -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="trending_item clearfix">
+                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="trending_content">
+                                <div class="trending_title"><a href="#">Điểm đến mới dành cho bạn</a></div>
+                                <div class="trending_price">13/06/2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Footer -->
         <footer class="footer">
@@ -384,41 +467,15 @@
 
                     <!-- Footer Column -->
                     <div class="col-lg-4 footer_column">
-                        <div class="footer_col">
-                            <div class="footer_title">Bài viết</div>
-                            <div class="footer_content footer_blog">
-                                <!-- Footer blog item -->
-                                <div class="footer_blog_item clearfix">
-                                    <div class="footer_blog_image">
-                                        <img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov" />
-                                    </div>
-                                    <div class="footer_blog_content">
-                                        <div class="footer_blog_title"><a href="blog.html">Travel with us this year</a></div>
-                                        <div class="footer_blog_date">Nov 29, 2017</div>
-                                    </div>
-                                </div>
-
-                                <!-- Footer blog item -->
-                                <div class="footer_blog_item clearfix">
-                                    <div class="footer_blog_image">
-                                        <img src="images/footer_blog_2.jpg" alt="https://unsplash.com/@deannaritchie" />
-                                    </div>
-                                    <div class="footer_blog_content">
-                                        <div class="footer_blog_title"><a href="blog.html">New destinations for you</a></div>
-                                        <div class="footer_blog_date">Nov 29, 2017</div>
-                                    </div>
-                                </div>
-
-                                <!-- Footer blog item -->
-                                <div class="footer_blog_item clearfix">
-                                    <div class="footer_blog_image">
-                                        <img src="images/footer_blog_3.jpg" alt="https://unsplash.com/@bergeryap87" />
-                                    </div>
-                                    <div class="footer_blog_content">
-                                        <div class="footer_blog_title"><a href="blog.html">Travel with us this year</a></div>
-                                        <div class="footer_blog_date">Nov 29, 2017</div>
-                                    </div>
-                                </div>
+                        <div class="footer_nav_container ">
+                            <div class="footer_title">Thông tin</div>
+                            <div class="footer_nav">
+                                <ul class="footer_nav_list">
+                                    <li class="footer_nav_item"><a href="#">Trang chủ</a></li>
+                                    <li class="footer_nav_item"><a href="about.html">Lịch trình</a></li>
+                                    <li class="footer_nav_item"><a href="blog.html">Địa điểm</a></li>
+                                    <li class="footer_nav_item"><a href="contact.html">Về chúng tôi</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -426,7 +483,7 @@
                     <!-- Footer Column -->
                     <div class="col-lg-4 footer_column">
                         <div class="footer_col">
-                            <div class="footer_title">Thông tin liên hệ</div>
+                            <div class="footer_title">Liên hệ</div>
                             <div class="footer_content footer_contact">
                                 <ul class="contact_info_list">
                                     <li class="contact_info_item d-flex flex-row">
@@ -467,34 +524,18 @@
 
         <div class="copyright">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 order-lg-1 order-2">
-                        <div class="copyright_content d-flex flex-row align-items-center">
-                            <div>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                                <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 order-lg-2 order-1">
-                        <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
-                            <div class="footer_nav">
-                                <ul class="footer_nav_list">
-                                    <li class="footer_nav_item"><a href="#">Trang chủ</a></li>
-                                    <li class="footer_nav_item"><a href="about.html">Lịch trình</a></li>
-                                    <li class="footer_nav_item"><a href="blog.html">Địa điểm</a></li>
-                                    <li class="footer_nav_item"><a href="contact.html">Về chúng tôi</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="copyright_content d-flex flex-row align-items-center ">
+                    <div>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        All rights reserved | Lịch trình phượt thủ
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

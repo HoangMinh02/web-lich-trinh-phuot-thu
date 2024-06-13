@@ -1029,7 +1029,7 @@ section {
 .intro {
     width: 100%;
     padding-top: 100px;
-    padding-bottom: 105px;
+    padding-bottom: 50px;
 }
 .intro_title {
     font-weight: 700;
@@ -1563,7 +1563,7 @@ section {
 
 .trending {
     width: 100%;
-    padding-top: 105px;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 .trending_container {
@@ -1930,29 +1930,36 @@ section {
     background: #1f0733;
 }
 .copyright_content {
+    justify-content: center;
     height: 52px;
 }
 .copyright_content div {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     color: #685677;
+    text-transform: uppercase;
 }
 .footer_nav_container {
+    display: flex;
+    flex-direction: column;
     height: 52px;
 }
 .footer_nav {
 }
 .footer_nav_list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
     font-size: 0px;
 }
 .footer_nav_item {
-    display: inline-block;
-    margin-right: 40px;
+    display: block;
+    margin-bottom: 22px;
 }
 .footer_nav_item a {
     font-size: 12px;
     font-weight: 600;
-    color: #685677;
+    color: #ffffff;
     text-transform: uppercase;
     line-height: 2;
     -webkit-transition: all 200ms ease;
@@ -1962,7 +1969,7 @@ section {
     transition: all 200ms ease;
 }
 .footer_nav_item a:hover {
-    color: #ffffff;
+    color: #fa9e1b;
 }
 
 /*note1*/
@@ -2011,7 +2018,7 @@ section {
 
 /* line 16, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_video.scss */
 .video_area .video_wrap h3 {
-    font-family: "Nothing You Could Do", cursive;
+    font-family: "Lora", serif;
     font-weight: 400;
     font-size: 80px;
     line-height: 90px;
