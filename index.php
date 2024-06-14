@@ -20,7 +20,7 @@
     <?php
     define('BASE_URL', 'http://localhost:8080/web_lich_trinh_phuot_thu/');
 
-    require_once('Database.php');
+    require_once('database.php');
 
     $sql = 'SELECT * FROM lichtrinh ';
 
@@ -56,74 +56,7 @@
     }
     ?>
     <div class="super_container">
-        <!-- Header -->
-
-        <header class="header">
-            <!-- Top Bar -->
-
-            <div class="top_bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col d-flex flex-row">
-                            <div class="phone">0123456789</div>
-                            <div class="social">
-                                <ul class="social_list">
-                                    <li class="social_list_item">
-                                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social_list_item">
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social_list_item">
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social_list_item">
-                                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social_list_item">
-                                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social_list_item">
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="user_box ml-auto">
-                                <div class="user_box_login user_box_link"><a href="#">Đăng nhập</a></div>
-                                <div class="user_box_register user_box_link"><a href="#">Đăng kí</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Navigation -->
-
-            <nav class="main_nav">
-                <div class="container">
-                    <div class="row">
-                        <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
-                            <div class="logo_container">
-                                <div class="logo">
-                                    <a href="#"><img src="images/logo.png" alt="" />travelix</a>
-                                </div>
-                            </div>
-                            <div class="main_nav_container ml-auto">
-                                <ul class="main_nav_list">
-                                    <li class="main_nav_item"><a href="#">Trang chủ</a></li>
-                                    <li class="main_nav_item"><a href="about.html">Lịch trình</a></li>
-                                    <li class="main_nav_item"><a href="blog.html">Địa điểm</a></li>
-                                    <li class="main_nav_item"><a href="contact.html">Về chúng tôi</a></li>
-                                </ul>
-                            </div>
-                            <div class="hamburger">
-                                <i class="fa fa-bars trans_200"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?= @include_once('includes/header.php') ?>
 
         <div class="menu trans_500">
             <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -348,10 +281,6 @@
             </div>
         </div>
 
-
-
-
-
         <div class="video_area video_bg overlay">
             <div class="container">
                 <div class="row">
@@ -369,56 +298,56 @@
             </div>
         </div>
 
-        <div class="trending">
+        <div class="blog">
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
                         <h2 class="section_title">Bài viết</h2>
                     </div>
                 </div>
-                <div class="row trending_container">
+                <div class="row blog_container">
 
-                    <!-- Trending Item -->
+                    <!-- blog Item -->
                     <div class="col-lg-3 col-sm-6">
-                        <div class="trending_item clearfix">
-                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
-                            <div class="trending_content">
-                                <div class="trending_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
-                                <div class="trending_price">Nov 29, 2017</div>
+                        <div class="blog_item clearfix">
+                            <div class="blog_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="blog_content">
+                                <div class="blog_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
+                                <div class="blog_date">13/06/2024</div>
                             </div>
                         </div>
                     </div>
 
 
-                    <!-- Trending Item -->
+                    <!-- blog Item -->
                     <div class="col-lg-3 col-sm-6">
-                        <div class="trending_item clearfix">
-                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
-                            <div class="trending_content">
-                                <div class="trending_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
-                                <div class="trending_price">Nov 29, 2017</div>
+                        <div class="blog_item clearfix">
+                            <div class="blog_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="blog_content">
+                                <div class="blog_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
+                                <div class="blog_date">13/06/2024</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Trending Item -->
+                    <!-- blog Item -->
                     <div class="col-lg-3 col-sm-6">
-                        <div class="trending_item clearfix">
-                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
-                            <div class="trending_content">
-                                <div class="trending_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
-                                <div class="trending_price">Nov 29, 2017</div>
+                        <div class="blog_item clearfix">
+                            <div class="blog_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="blog_content">
+                                <div class="blog_title"><a href="#">Hãy du lịch cùng chúng tôi trong năm nay</a></div>
+                                <div class="blog_date">13/06/2024</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Trending Item -->
+                    <!-- blog Item -->
                     <div class="col-lg-3 col-sm-6">
-                        <div class="trending_item clearfix">
-                            <div class="trending_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
-                            <div class="trending_content">
-                                <div class="trending_title"><a href="#">Điểm đến mới dành cho bạn</a></div>
-                                <div class="trending_price">13/06/2024</div>
+                        <div class="blog_item clearfix">
+                            <div class="blog_image"><img src="images/footer_blog_1.jpg" alt="https://unsplash.com/@avidenov"></div>
+                            <div class="blog_content">
+                                <div class="blog_title"><a href="#">Điểm đến mới dành cho bạn</a></div>
+                                <div class="blog_date">13/06/2024</div>
                             </div>
                         </div>
                     </div>
@@ -426,118 +355,8 @@
             </div>
         </div>
 
+        <?= @include_once('includes/footer.php') ?>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Column -->
-                    <div class="col-lg-4 footer_column">
-                        <div class="footer_col">
-                            <div class="footer_content footer_about">
-                                <div class="logo_container footer_logo">
-                                    <div class="logo">
-                                        <a href="#"><img src="images/logo.png" alt="" />travelix</a>
-                                    </div>
-                                </div>
-                                <p class="footer_about_text">
-                                    Travelix là trang web tin tức du lịch hàng đầu, cung cấp thông tin về các điểm đến hấp dẫn, kinh nghiệm du
-                                    lịch, ẩm thực đặc sắc và nhiều hơn nữa.
-                                </p>
-                                <ul class="footer_social_list">
-                                    <li class="footer_social_item">
-                                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    </li>
-                                    <li class="footer_social_item">
-                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                    </li>
-                                    <li class="footer_social_item">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                    </li>
-                                    <li class="footer_social_item">
-                                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                                    </li>
-                                    <li class="footer_social_item">
-                                        <a href="#"><i class="fa fa-behance"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer Column -->
-                    <div class="col-lg-4 footer_column">
-                        <div class="footer_nav_container ">
-                            <div class="footer_title">Thông tin</div>
-                            <div class="footer_nav">
-                                <ul class="footer_nav_list">
-                                    <li class="footer_nav_item"><a href="#">Trang chủ</a></li>
-                                    <li class="footer_nav_item"><a href="about.html">Lịch trình</a></li>
-                                    <li class="footer_nav_item"><a href="blog.html">Địa điểm</a></li>
-                                    <li class="footer_nav_item"><a href="contact.html">Về chúng tôi</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer Column -->
-                    <div class="col-lg-4 footer_column">
-                        <div class="footer_col">
-                            <div class="footer_title">Liên hệ</div>
-                            <div class="footer_content footer_contact">
-                                <ul class="contact_info_list">
-                                    <li class="contact_info_item d-flex flex-row">
-                                        <div>
-                                            <div class="contact_info_icon"><img src="images/placeholder.svg" alt="" /></div>
-                                        </div>
-                                        <div class="contact_info_text">65 Huỳnh Thúc Kháng, Phường Bến Nghé, Quận 1, TP.Hồ Chí Minh</div>
-                                    </li>
-                                    <li class="contact_info_item d-flex flex-row">
-                                        <div>
-                                            <div class="contact_info_icon"><img src="images/phone-call.svg" alt="" /></div>
-                                        </div>
-                                        <div class="contact_info_text">0123456789</div>
-                                    </li>
-                                    <li class="contact_info_item d-flex flex-row">
-                                        <div>
-                                            <div class="contact_info_icon"><img src="images/message.svg" alt="" /></div>
-                                        </div>
-                                        <div class="contact_info_text">
-                                            <a href="mailto:contactme@gmail.com?Subject=Hello" target="_top">lichtrinhphuotthu@gmail.com</a>
-                                        </div>
-                                    </li>
-                                    <li class="contact_info_item d-flex flex-row">
-                                        <div>
-                                            <div class="contact_info_icon"><img src="images/planet-earth.svg" alt="" /></div>
-                                        </div>
-                                        <div class="contact_info_text"><a href="https://colorlib.com">www.lichtrinhphuotthu.com</a></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Copyright -->
-
-        <div class="copyright">
-            <div class="container">
-                <div class="copyright_content d-flex flex-row align-items-center ">
-                    <div>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        All rights reserved | Lịch trình phượt thủ
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
